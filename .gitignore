@@ -49,6 +49,6 @@ Temporary Items
 # =========================
 #Intellij
 
-/.bin
+/bin
 /.idea
 /nbproject
