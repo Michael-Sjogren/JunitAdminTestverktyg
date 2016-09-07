@@ -20,8 +20,9 @@ import javafx.util.Duration;
 /**
  *
  * @author Angie
- * denna klass är tagen ifrån github
+ * denna klass ï¿½r tagen ifrï¿½n github
  */
+@SuppressWarnings("LossyEncoding")
 public class ScreenController  extends StackPane {
     //Holds the screens to be displayed
 
