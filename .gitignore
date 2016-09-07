@@ -49,6 +49,18 @@ Temporary Items
 # =========================
 #Intellij
 
-/bin
+
 /.idea
 /nbproject
+
+*.class
+bin/application/AdminView.fxml
+bin/application/GroupView.fxml
+bin/application/application.css
+bin/application/StatistikView.fxml
+bin/META-INF/persistence.xml
+bin/production/TestVerktygAdminFinal - kopia/application/AdminView.fxml
+bin/production/TestVerktygAdminFinal - kopia/META-INF/persistence.xml
+bin/production/TestVerktygAdminFinal - kopia/application/application.css
+bin/production/TestVerktygAdminFinal - kopia/application/GroupView.fxml
+bin/production/TestVerktygAdminFinal - kopia/application/StatistikView.fxml
