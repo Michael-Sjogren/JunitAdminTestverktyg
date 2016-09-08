@@ -46,13 +46,13 @@ public class WriteToTextFile {
 			String txt = "", checkTxt;
 			FileWriter fileWriter;
 
-			// söker efter keywords som checkbox,textfield eller textarea i
+			// sï¿½ker efter keywords som checkbox,textfield eller textarea i
 			// textlist arrayen
 			for (i = 0; i < textList.size(); i++) {
 				checkTxt = textList.get(i);
 				if (checkTxt.equals("checkbox")) {
-					// varje gång checkbox påträffas i loopen Itererar jag en
-					// int för att hålla reda på nyckeln som håller värdet i hashmappen
+					// varje gï¿½ng checkbox pï¿½trï¿½ffas i loopen Itererar jag en
+					// int fï¿½r att hï¿½lla reda pï¿½ nyckeln som hï¿½ller vï¿½rdet i hashmappen
 					iteratorCheckbox++;
 
 					textList.set(i + 1, String.valueOf(checkBoxMapX.get(iteratorCheckbox).intValue()));
@@ -112,6 +112,10 @@ public class WriteToTextFile {
 		this.checkboxX = checkboxX;
 	}
 
+	public double getCheckboxX() {
+		return this.checkboxX;
+	}
+
 	public void setCheckboxY(double checkboxY) {
 		this.checkboxY = checkboxY;
 	}
@@ -132,16 +136,16 @@ public class WriteToTextFile {
 		this.textareaY = textareaY;
 	}
 
-	// collision index skickas varje gång en checkbox blir dragen ,
-	// creationIndex updateras varje gång en nod skapas
+	// collision index skickas varje gï¿½ng en checkbox blir dragen ,
+	// creationIndex updateras varje gï¿½ng en nod skapas
 	public void setCheckBoxMap(Integer collisionIndex, Integer creationIndex) {
 
-		// creation index här för att fylla nyckel positionen , value lämmnar
-		// jag noll vid tillfället
+		// creation index hï¿½r fï¿½r att fylla nyckel positionen , value lï¿½mmnar
+		// jag noll vid tillfï¿½llet
 		checkBoxMapX.put(creationIndex, 0.0);
 		checkBoxMapY.put(creationIndex, 0.0);
 
-		// varje gång jag drar i en checkbox kallas denna metod och updaterar
+		// varje gï¿½ng jag drar i en checkbox kallas denna metod och updaterar
 		// hashmapen
 		checkBoxMapX.replace(collisionIndex, checkboxX);
 		checkBoxMapY.replace(collisionIndex, checkboxY);
@@ -152,12 +156,12 @@ public class WriteToTextFile {
 
 	public void setTextFieldMap(Integer collisionIndex, Integer creationIndex) {
 
-		// creation index här för att fylla nyckel positionen , value lämmnar
-		// jag noll vid tillfället
+		// creation index hï¿½r fï¿½r att fylla nyckel positionen , value lï¿½mmnar
+		// jag noll vid tillfï¿½llet
 		textFieldMapX.put(creationIndex, 0.0);
 		textFieldMapY.put(creationIndex, 0.0);
 
-		// varje gång jag drar i en checkbox kallas denna metod och updaterar
+		// varje gï¿½ng jag drar i en checkbox kallas denna metod och updaterar
 		// hashmapen
 		textFieldMapX.replace(collisionIndex, textfieldX);
 		textFieldMapY.replace(collisionIndex, textfieldY);
@@ -168,12 +172,12 @@ public class WriteToTextFile {
 
 	public void setTextAreaMap(Integer collisionIndex, Integer creationIndex) {
 
-		// creation index här för att fylla nyckel positionen , value lämmnar
-		// jag noll vid tillfället
+		// creation index hï¿½r fï¿½r att fylla nyckel positionen , value lï¿½mmnar
+		// jag noll vid tillfï¿½llet
 		textAreaMapX.put(creationIndex, 0.0);
 		textAreaMapY.put(creationIndex, 0.0);
 
-		// varje gång jag drar i en checkbox kallas denna metod och updaterar
+		// varje gï¿½ng jag drar i en checkbox kallas denna metod och updaterar
 		// hashmapen
 		textAreaMapX.replace(collisionIndex, textareaX);
 		textAreaMapY.replace(collisionIndex, textareaY);
