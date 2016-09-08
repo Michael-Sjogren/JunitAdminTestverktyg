@@ -3,6 +3,8 @@ package application;
 import org.junit.Rule;
 import org.junit.Test;
 
+import java.io.File;
+
 import static org.junit.Assert.*;
 
 /**
@@ -11,6 +13,13 @@ import static org.junit.Assert.*;
 public class WriteToTextFileTest {
     @Rule public JavaFXThreadingRule javafxRule = new JavaFXThreadingRule();
     WriteToTextFile writer = new WriteToTextFile();
+
+    @Test
+    public void testSaveFile() throws Exception {
+        boolean isSucessful = writer.SaveFile(new File("test.ini"));
+        assertEquals(true,isSucessful);
+
+    }
 
     @Test
     public void showFileChooser() throws Exception {

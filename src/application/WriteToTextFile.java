@@ -36,13 +36,13 @@ public class WriteToTextFile {
 
 	}
 
-	private void SaveFile(File file) {
+	public boolean SaveFile(File file) {
+
 		int iteratorCheckbox = -1;
 		int iteratorTextField = -1;
 		int iteratorTextArea = -1;
 		System.out.println("checking file");
 		try {
-
 			String txt = "", checkTxt;
 			FileWriter fileWriter;
 
@@ -76,6 +76,9 @@ public class WriteToTextFile {
 
 			
 			fileWriter = new FileWriter(file);
+			if(fileWriter == null){
+				return false;
+			}
 			for (i = 0; i < textList.size(); i++) {
 
 				txt = textList.get(i) + "\r\n";
@@ -85,10 +88,11 @@ public class WriteToTextFile {
 
 			fileWriter.close();
 
+
 		} catch (IOException ex) {
 			Logger.getLogger(WriteToTextFile.class.getName()).log(Level.SEVERE, null, ex);
 		}
-
+        return true;
 	}
 
 	public void showFileChooser() {
