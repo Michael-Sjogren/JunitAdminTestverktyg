@@ -5,13 +5,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Button?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AdminController">
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GroupController">
 	<center>
 		<Label text="Group" />
 	</center>
    <bottom>
       <VBox prefHeight="48.0" BorderPane.alignment="CENTER">
-      	<Button mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Gå tillbaka" />
+      	<Button mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="Gå tillbaka" onAction="#onGoToMainScreen" />
       </VBox>
    </bottom>
 </BorderPane>
