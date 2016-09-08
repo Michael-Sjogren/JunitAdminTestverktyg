@@ -20,7 +20,7 @@ public class WriteToTextFile {
 	private double textareaX;
 	private double textareaY;
 
-	private ArrayList<String> textList = new ArrayList<String>();
+	ArrayList<String> textList = new ArrayList<String>();
 	
 	private HashMap<Integer, Double> checkBoxMapX = new HashMap<Integer, Double>();
 	private HashMap<Integer, Double> checkBoxMapY = new HashMap<Integer, Double>();

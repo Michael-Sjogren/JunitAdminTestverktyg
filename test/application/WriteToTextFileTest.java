@@ -28,8 +28,8 @@ public class WriteToTextFileTest {
 
     @Test
     public void setTextInFile() throws Exception {
-        writer.setTextInFile("");
-        //writer.showFileChooser();
+        writer.setTextInFile("Tab");
+        assertEquals("Tab", writer.textList.get(writer.textList.size ()-1));
     }
 
     @Test
