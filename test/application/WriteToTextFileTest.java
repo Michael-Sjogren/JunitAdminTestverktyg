@@ -16,8 +16,8 @@ public class WriteToTextFileTest {
 
     @Test
     public void testSaveFile() throws Exception {
-        boolean isSucessful = writer.SaveFile(new File("test.ini"));
-        assertEquals(true,isSucessful);
+        boolean isSuccessful = writer.SaveFile(new File("test.ini"));
+        assertEquals(true,isSuccessful);
 
     }
 
