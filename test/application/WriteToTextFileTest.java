@@ -2,8 +2,13 @@ package application;
 
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.Ignore;
 
-import java.io.File;
+import java.io.*;
+import java.nio.file.Files;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 import static org.junit.Assert.*;
 
@@ -12,19 +17,57 @@ import static org.junit.Assert.*;
  */
 public class WriteToTextFileTest {
     @Rule public JavaFXThreadingRule javafxRule = new JavaFXThreadingRule();
+
     WriteToTextFile writer = new WriteToTextFile();
 
-    @Test
-    public void testSaveFile() throws Exception {
-        boolean isSuccessful = writer.SaveFile(new File("test.ini"));
-        assertEquals(true,isSuccessful);
+    private List<String> readFileLines(File file) {
+        List<String> lines = new ArrayList<>();
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String line;
 
+            while((line = reader.readLine()) != null) {
+                lines.add(line);
+            }
+        } catch (IOException e) {}
+        return lines;
+    }
+
+   @Test
+    public void testSaveFileWithoutContent() throws Exception {
+        File file = new File("test.ini");
+        boolean result = writer.SaveFile(file);
+        assertEquals(true, result);
+
+       List<String> lines = readFileLines(file);
+       assertEquals(0, lines.size());
     }
 
     @Test
-    public void showFileChooser() throws Exception {
+    public void testSaveFileWithCheckbox() throws Exception {
+        File file = new File("test.ini");
 
+        writer.setTextInFile("checkbox");
+        writer.setTextInFile("");
+        writer.setTextInFile("");
+        writer.setTextInFile("Text");
+
+        writer.setCheckboxX(2.3);
+        writer.setCheckboxY(3.3);
+        writer.setCheckBoxMap(0, 0);
+
+        boolean result = writer.SaveFile(file);
+        assertEquals(true, result);
+
+        List<String> lines = readFileLines(file);
+        assertEquals(4, lines.size());
+        assertEquals("checkbox", lines.get(0));
+        assertEquals("2", lines.get(1));
+        assertEquals("3", lines.get(2));
+        assertEquals("Text", lines.get(3));
     }
+
+
 
     @Test
     public void setTextInFile() throws Exception {
