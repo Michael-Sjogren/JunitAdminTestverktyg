@@ -14,7 +14,9 @@ import org.junit.runners.model.Statement;
 
 /**
  * Created by yanting on 07/09/16.
+ * This file is needed to use Junit with JavaFx classes.
  */
+
 public class JavaFXThreadingRule implements TestRule {
 
     /**
